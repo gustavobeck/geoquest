@@ -1,7 +1,9 @@
 package geoquestgame;
 
 import classes.BackgroundPanel;
+import static geoquestgame.QualBandeira.paises;
 import javax.swing.ImageIcon;
+import javax.swing.JOptionPane;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -43,10 +45,42 @@ public class Jogos extends javax.swing.JFrame {
                 g2.dispose();
             }
         };
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
-        jButton5 = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton() {
+            @Override
+            public void paintComponent(java.awt.Graphics g) {
+                java.awt.Image img = new javax.swing.ImageIcon(getClass().getResource("../imagens/Group 5.png")).getImage();
+                java.awt.Graphics2D g2 = (java.awt.Graphics2D) g.create();
+                g2.drawImage(img, 0, 0, getWidth(), getHeight(), null);
+                g2.dispose();
+            }
+        };
+        jButton3 = new javax.swing.JButton() {
+            @Override
+            public void paintComponent(java.awt.Graphics g) {
+                java.awt.Image img = new javax.swing.ImageIcon(getClass().getResource("../imagens/mapaMundi.png")).getImage();
+                java.awt.Graphics2D g2 = (java.awt.Graphics2D) g.create();
+                g2.drawImage(img, 0, 0, getWidth(), getHeight(), null);
+                g2.dispose();
+            }
+        };
+        jButton4 = new javax.swing.JButton() {
+            @Override
+            public void paintComponent(java.awt.Graphics g) {
+                java.awt.Image img = new javax.swing.ImageIcon(getClass().getResource("../imagens/escolhaBandeira.png")).getImage();
+                java.awt.Graphics2D g2 = (java.awt.Graphics2D) g.create();
+                g2.drawImage(img, 0, 0, getWidth(), getHeight(), null);
+                g2.dispose();
+            }
+        };
+        jButton5 = new javax.swing.JButton() {
+            @Override
+            public void paintComponent(java.awt.Graphics g) {
+                java.awt.Image img = new javax.swing.ImageIcon(getClass().getResource("../imagens/colecao.png")).getImage();
+                java.awt.Graphics2D g2 = (java.awt.Graphics2D) g.create();
+                g2.drawImage(img, 0, 0, getWidth(), getHeight(), null);
+                g2.dispose();
+            }
+        };
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         addWindowListener(new java.awt.event.WindowAdapter() {
@@ -62,7 +96,6 @@ public class Jogos extends javax.swing.JFrame {
             }
         });
 
-        jButton2.setText("HOME");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);
@@ -72,6 +105,11 @@ public class Jogos extends javax.swing.JFrame {
         jButton3.setText("jButton3");
 
         jButton4.setText("jButton4");
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton4ActionPerformed(evt);
+            }
+        });
 
         jButton5.setText("jButton5");
 
@@ -80,32 +118,34 @@ public class Jogos extends javax.swing.JFrame {
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(jButton2))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(59, 59, 59))
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(222, 222, 222)
+                .addGap(221, 221, 221)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 264, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 264, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(65, 65, 65)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jButton4, javax.swing.GroupLayout.DEFAULT_SIZE, 264, Short.MAX_VALUE)
-                    .addComponent(jButton5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(234, Short.MAX_VALUE))
+                    .addComponent(jButton4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 264, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(235, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addComponent(jButton2)
-                .addGap(131, 131, 131)
+                .addGap(57, 57, 57)
+                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(49, 49, 49)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jButton4, javax.swing.GroupLayout.DEFAULT_SIZE, 196, Short.MAX_VALUE)
-                    .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(jButton4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 196, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jButton5, javax.swing.GroupLayout.DEFAULT_SIZE, 196, Short.MAX_VALUE)
-                    .addComponent(jButton3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(137, Short.MAX_VALUE))
+                    .addComponent(jButton5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 196, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(133, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -128,10 +168,15 @@ public class Jogos extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-        QualBandeiraBrasil q = new QualBandeiraBrasil();
-        q.setLocationRelativeTo(null);
-        q.setVisible(true);
-        this.dispose();
+        QualBandeira q = new QualBandeira();
+        if(q.isEmpty()) {
+            JOptionPane.showMessageDialog(rootPane, "Você acertou todas as bandeiras corretamente, tente outro modo!", "Sucesso", 1);
+        }
+        else {
+            q.setLocationRelativeTo(null);
+            q.setVisible(true);
+            this.dispose();
+        }
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
@@ -141,6 +186,14 @@ public class Jogos extends javax.swing.JFrame {
         m.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+        // TODO add your handling code here:
+        EscolhaBandeira e = new EscolhaBandeira();
+        e.setLocationRelativeTo(null);
+        e.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_jButton4ActionPerformed
 
     /**
      * @param args the command line arguments
