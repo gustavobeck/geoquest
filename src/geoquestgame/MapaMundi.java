@@ -268,6 +268,7 @@ public class MapaMundi extends javax.swing.JFrame {
         if (pais.equalsIgnoreCase(botao)) {
             paisesAuxiliar.remove(botao.toLowerCase());
             JOptionPane.showMessageDialog(rootPane, "Parabéns você acertou!", "Sucesso", 1);
+            Jogos.porcentagemJogo3 += 7.7;
             premiosPaises(pais);
             Jogos j = new Jogos();
             j.setLocationRelativeTo(null);

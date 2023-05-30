@@ -167,6 +167,7 @@ public class QualBandeira extends javax.swing.JFrame {
             if (pais.equalsIgnoreCase(jTextField1.getText().trim())) {
                 paises.remove(pais);
                 JOptionPane.showMessageDialog(rootPane, "Parabéns você acertou!", "Sucesso", 1);
+                Jogos.porcentagemJogo1 += 7.7;
                 premiosPaises(pais);
                 Jogos j = new Jogos();
                 j.setLocationRelativeTo(null);
