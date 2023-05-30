@@ -24,7 +24,7 @@ public class QualBandeira extends javax.swing.JFrame {
     static List<String> paises = new ArrayList(Arrays.asList(vetorPaises));
     Random random = new Random();
     String pais = "";
-    Integer vidas = 3;
+    static Integer vidas = 3;
     Premios p = new Premios();
     static boolean jaIncrementouBrasil = false;
     static boolean jaIncrementouChile = false;
@@ -51,6 +51,7 @@ public class QualBandeira extends javax.swing.JFrame {
         if (!paises.isEmpty()) {
             pais = paises.get(random.nextInt(paises.size()));
             initComponents();
+            jLabel2.setText("  " + vidas.toString());
         }
     }
 
@@ -175,6 +176,7 @@ public class QualBandeira extends javax.swing.JFrame {
                 if (vidas == 1) {
                     paises = new ArrayList();
                     paises.addAll(Arrays.asList(vetorPaises));
+                    vidas = 3;
                     Jogos j = new Jogos();
                     JOptionPane.showMessageDialog(rootPane, "Você perdeu sua win streak, comece novamente!", "Erro", 0);
                     j.setLocationRelativeTo(null);

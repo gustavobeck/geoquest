@@ -25,7 +25,7 @@ public class MapaMundi extends javax.swing.JFrame {
     final List<String> paisesSorteados = new ArrayList<>();
     Random random = new Random();
     String pais = "";
-    Integer vidas = 3;
+    static Integer vidas = 3;
     Premios p = new Premios();
     static boolean jaIncrementouBrasil = false;
     static boolean jaIncrementouChile = false;
@@ -52,6 +52,7 @@ public class MapaMundi extends javax.swing.JFrame {
         if (!paisesAuxiliar.isEmpty()) {
             pais = paisesAuxiliar.get(random.nextInt(paisesAuxiliar.size()));
             initComponents();
+            jLabel2.setText("  " + vidas.toString());
 
             while (paisesSorteados.size() < 3) {
                 int indiceAleatorio = random.nextInt(paises.size());
@@ -277,6 +278,7 @@ public class MapaMundi extends javax.swing.JFrame {
                 paisesAuxiliar = new ArrayList();
                 paisesAuxiliar.addAll(Arrays.asList(vetorPaises));
                 Jogos j = new Jogos();
+                vidas = 3;
                 JOptionPane.showMessageDialog(rootPane, "Você perdeu sua win streak, comece novamente!", "Erro", 0);
                 j.setLocationRelativeTo(null);
                 j.setVisible(true);
