@@ -5,6 +5,7 @@
 package geoquestgame;
 
 import classes.BackgroundPanel;
+import classes.Premios;
 import java.awt.event.KeyEvent;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -18,13 +19,27 @@ import javax.swing.JOptionPane;
  * @author CIANDT\gustavofb
  */
 public class QualBandeira extends javax.swing.JFrame {
-    
-    final static String[] vetorPaises = {"brasil", "chile", "argentina", "equador", "colombia", "uruguai", "paraguai", "venezuela", "guiana", "guiana francesa", "suriname", "peru", "bolivia"};
+
+    final static String[] vetorPaises = {"brasil", "chile", "argentina", "equador", "colômbia", "uruguai", "paraguai", "venezuela", "guiana", "guiana francesa", "suriname", "peru", "bolívia"};
     static List<String> paises = new ArrayList(Arrays.asList(vetorPaises));
     Random random = new Random();
     String pais = "";
     Integer vidas = 3;
-    
+    Premios p = new Premios();
+    static boolean jaIncrementouBrasil = false;
+    static boolean jaIncrementouChile = false;
+    static boolean jaIncrementouArgentina = false;
+    static boolean jaIncrementouEquador = false;
+    static boolean jaIncrementouColombia = false;
+    static boolean jaIncrementouUruguai = false;
+    static boolean jaIncrementouParaguai = false;
+    static boolean jaIncrementouVenezuela = false;
+    static boolean jaIncrementouGuiana = false;
+    static boolean jaIncrementouGuianaFrancesa = false;
+    static boolean jaIncrementouSuriname = false;
+    static boolean jaIncrementouPeru = false;
+    static boolean jaIncrementouBolivia = false;
+
     public boolean isEmpty() {
         return paises.isEmpty();
     }
@@ -33,12 +48,12 @@ public class QualBandeira extends javax.swing.JFrame {
      * Creates new form QualBandeiraBrasil
      */
     public QualBandeira() {
-        if(!paises.isEmpty()) {
+        if (!paises.isEmpty()) {
             pais = paises.get(random.nextInt(paises.size()));
             initComponents();
         }
     }
-    
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -147,36 +162,131 @@ public class QualBandeira extends javax.swing.JFrame {
 
     private void jTextField1KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField1KeyPressed
         // TODO add your handling code here:
-        if(evt.getKeyCode() == KeyEvent.VK_ENTER) {
-            if(pais.equalsIgnoreCase(jTextField1.getText().trim())) {
-               paises.remove(pais);
-               JOptionPane.showMessageDialog(rootPane, "Parabéns você acertou!", "Sucesso", 1);
-               Jogos j = new Jogos();
-               j.setLocationRelativeTo(null);
-               j.setVisible(true);
-               this.dispose();
-            }
-            else {
-                if(vidas == 1) {
+        if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
+            if (pais.equalsIgnoreCase(jTextField1.getText().trim())) {
+                paises.remove(pais);
+                JOptionPane.showMessageDialog(rootPane, "Parabéns você acertou!", "Sucesso", 1);
+                premiosPaises(pais);
+                Jogos j = new Jogos();
+                j.setLocationRelativeTo(null);
+                j.setVisible(true);
+                this.dispose();
+            } else {
+                if (vidas == 1) {
                     paises = new ArrayList();
                     paises.addAll(Arrays.asList(vetorPaises));
-                  Jogos j = new Jogos();
+                    Jogos j = new Jogos();
                     JOptionPane.showMessageDialog(rootPane, "Você perdeu sua win streak, comece novamente!", "Erro", 0);
                     j.setLocationRelativeTo(null);
                     j.setVisible(true);
                     this.dispose();
-                }
-                else {
+                } else {
                     JOptionPane.showMessageDialog(rootPane, "Você errou!", "Erro", 0);
                     vidas--;
                     jLabel2.setText("  " + vidas.toString());
                     jTextField1.setText("");
                 }
             }
-            
+
         }
     }//GEN-LAST:event_jTextField1KeyPressed
 
+    
+    private void premiosPaises(final String paisPremio) {
+        switch (paisPremio.toLowerCase()) {
+            case "brasil":
+                p.premios(paisPremio, jaIncrementouBrasil);
+                jaIncrementouBrasil = true;
+                if(Premios.premioBrasil == 3) {
+                    JOptionPane.showMessageDialog(rootPane, "Você ganhou um prêmio do Brasil, entre na aba de Coleção para vê-lo!", "Sucesso", 1);
+                }
+                break;
+            case "chile":
+                p.premios(paisPremio, jaIncrementouChile);
+                jaIncrementouChile = true;
+                if(Premios.premioChile == 3) {
+                    JOptionPane.showMessageDialog(rootPane, "Você ganhou um prêmio do Chile, entre na aba de Coleção para vê-lo!", "Sucesso", 1);
+                }
+                break;
+            case "argentina":
+                p.premios(paisPremio, jaIncrementouArgentina);
+                jaIncrementouArgentina = true;
+                if(Premios.premioArgentina == 3) {
+                    JOptionPane.showMessageDialog(rootPane, "Você ganhou um prêmio da Argentina, entre na aba de Coleção para vê-lo!", "Sucesso", 1);
+                }
+                break;
+            case "equador":
+                p.premios(paisPremio, jaIncrementouEquador);
+                jaIncrementouEquador = true;
+                if(Premios.premioEquador == 3) {
+                    JOptionPane.showMessageDialog(rootPane, "Você ganhou um prêmio do Equador, entre na aba de Coleção para vê-lo!", "Sucesso", 1);
+                }
+                break;
+            case "colômbia":
+                p.premios(paisPremio, jaIncrementouColombia);
+                jaIncrementouColombia = true;
+                if(Premios.premioColombia == 3) {
+                    JOptionPane.showMessageDialog(rootPane, "Você ganhou um prêmio da Colômbia, entre na aba de Coleção para vê-lo!", "Sucesso", 1);
+                }
+                break;
+            case "uruguai":
+                p.premios(paisPremio, jaIncrementouUruguai);
+                jaIncrementouUruguai = true;
+                if(Premios.premioUruguai == 3) {
+                    JOptionPane.showMessageDialog(rootPane, "Você ganhou um prêmio do Uruguai, entre na aba de Coleção para vê-lo!", "Sucesso", 1);
+                }
+                break;
+            case "paraguai":
+                p.premios(paisPremio, jaIncrementouParaguai);
+                jaIncrementouParaguai = true;
+                if(Premios.premioParaguai == 3) {
+                    JOptionPane.showMessageDialog(rootPane, "Você ganhou um prêmio do Paraguai, entre na aba de Coleção para vê-lo!", "Sucesso", 1);
+                }
+                break;
+            case "venezuela":
+                p.premios(paisPremio, jaIncrementouVenezuela);
+                jaIncrementouVenezuela = true;
+                if(Premios.premioVenezuela == 3) {
+                    JOptionPane.showMessageDialog(rootPane, "Você ganhou um prêmio da Venezuela, entre na aba de Coleção para vê-lo!", "Sucesso", 1);
+                }
+                break;
+            case "guiana":
+                p.premios(paisPremio, jaIncrementouGuiana);
+                jaIncrementouGuiana = true;
+                if(Premios.premioGuiana == 3) {
+                    JOptionPane.showMessageDialog(rootPane, "Você ganhou um prêmio da Guiana, entre na aba de Coleção para vê-lo!", "Sucesso", 1);
+                }
+                break;
+            case "guiana francesa":
+                p.premios(paisPremio, jaIncrementouGuianaFrancesa);
+                jaIncrementouGuianaFrancesa = true;
+                if(Premios.premioGuianaFrancesa == 3) {
+                    JOptionPane.showMessageDialog(rootPane, "Você ganhou um prêmio da Guiana Francesa, entre na aba de Coleção para vê-lo!", "Sucesso", 1);
+                }
+                break;
+            case "suriname":
+                p.premios(paisPremio, jaIncrementouSuriname);
+                jaIncrementouSuriname = true;
+                if(Premios.premioSuriname == 3) {
+                    JOptionPane.showMessageDialog(rootPane, "Você ganhou um prêmio do Suriname, entre na aba de Coleção para vê-lo!", "Sucesso", 1);
+                }
+                break;
+            case "peru":
+                p.premios(paisPremio, jaIncrementouPeru);
+                jaIncrementouPeru = true;
+                if(Premios.premioPeru == 3) {
+                    JOptionPane.showMessageDialog(rootPane, "Você ganhou um prêmio do Peru, entre na aba de Coleção para vê-lo!", "Sucesso", 1);
+                }
+                break;
+            case "bolívia":
+                p.premios(paisPremio, jaIncrementouBolivia);
+                jaIncrementouBolivia = true;
+                if(Premios.premioBolivia == 3) {
+                    JOptionPane.showMessageDialog(rootPane, "Você ganhou um prêmio da Bolívia, entre na aba de Coleção para vê-lo!", "Sucesso", 1);
+                }
+                break;
+        }
+    }
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
         Jogos j = new Jogos();

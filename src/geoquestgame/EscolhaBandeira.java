@@ -1,7 +1,9 @@
 package geoquestgame;
 
 import classes.BackgroundPanel;
+import classes.Premios;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Random;
 import javax.swing.ImageIcon;
@@ -21,30 +23,83 @@ public class EscolhaBandeira extends javax.swing.JFrame {
     /**
      * Creates new form Menu
      */
-    final static List<String> paises = List.of("brasil", "chile", "argentina", "equador", "colombia", "uruguai", "paraguai", "venezuela", "guiana", "guiana francesa", "suriname", "peru", "bolivia");
+    final static String[] vetorPaises = {"brasil", "chile", "argentina", "equador", "colômbia", "uruguai", "paraguai", "venezuela", "guiana", "guiana francesa", "suriname", "peru", "bolívia"};
+    static List<String> paises = new ArrayList(Arrays.asList(vetorPaises));
+    static List<String> paisesAuxiliar = new ArrayList(Arrays.asList(vetorPaises));
     final List<String> paisesSorteados = new ArrayList<>();
     String pais = "";
     String botao1 = "";
     String botao2 = "";
     String botao3 = "";
     String botao4 = "";
+    Integer vidas = 3;
+    Premios p = new Premios();
+    static boolean jaIncrementouBrasil = false;
+    static boolean jaIncrementouChile = false;
+    static boolean jaIncrementouArgentina = false;
+    static boolean jaIncrementouEquador = false;
+    static boolean jaIncrementouColombia = false;
+    static boolean jaIncrementouUruguai = false;
+    static boolean jaIncrementouParaguai = false;
+    static boolean jaIncrementouVenezuela = false;
+    static boolean jaIncrementouGuiana = false;
+    static boolean jaIncrementouGuianaFrancesa = false;
+    static boolean jaIncrementouSuriname = false;
+    static boolean jaIncrementouPeru = false;
+    static boolean jaIncrementouBolivia = false;
+
+    public boolean isEmpty() {
+        return paisesAuxiliar.isEmpty();
+    }
 
     public EscolhaBandeira() {
-        Random random = new Random();
-        
-        int tamanhoLista = paises.size();
-        int quantidadeStrings = 4;
+        if (!paisesAuxiliar.isEmpty()) {
+            Random random = new Random();
 
-        while (paisesSorteados.size() < quantidadeStrings) {
-            int indiceAleatorio = random.nextInt(tamanhoLista);
-            String stringAleatoria = paises.get(indiceAleatorio);
-            if (!paisesSorteados.contains(stringAleatoria)) {
-                paisesSorteados.add(stringAleatoria);
+            int tamanhoLista = paises.size();
+            int quantidadeStrings = 3;
+
+            pais = paisesAuxiliar.get(random.nextInt(paisesAuxiliar.size()));
+            while (paisesSorteados.size() < quantidadeStrings) {
+                int indiceAleatorio = random.nextInt(tamanhoLista);
+                String stringAleatoria = paises.get(indiceAleatorio);
+                if (!paisesSorteados.contains(stringAleatoria) && !pais.equals(stringAleatoria)) {
+                    paisesSorteados.add(stringAleatoria);
+                }
             }
+            
+            Integer botaoCerto = random.nextInt(3);
+            switch(botaoCerto) {
+                case 0:
+                    botao1 = pais;
+                    botao2 = paisesSorteados.get(0);
+                    botao3 = paisesSorteados.get(1);
+                    botao4 = paisesSorteados.get(2);
+                    break;
+                case 1:
+                    botao2 = pais;
+                    botao1 = paisesSorteados.get(0);
+                    botao3 = paisesSorteados.get(1);
+                    botao4 = paisesSorteados.get(2);
+                    break;
+                case 2:
+                    botao3 = pais;
+                    botao2 = paisesSorteados.get(0);
+                    botao1 = paisesSorteados.get(1);
+                    botao4 = paisesSorteados.get(2);
+                    break;
+                case 3:
+                    botao4 = pais;
+                    botao2 = paisesSorteados.get(0);
+                    botao3 = paisesSorteados.get(1);
+                    botao1 = paisesSorteados.get(2);
+                    break;
+            }
+
+            initComponents();
+            jLabel1.setText(pais.toUpperCase());
         }
-        initComponents();
-        pais = paisesSorteados.get(random.nextInt(paisesSorteados.size()));
-        jLabel1.setText(pais.toUpperCase());
+
     }
 
     /**
@@ -60,7 +115,7 @@ public class EscolhaBandeira extends javax.swing.JFrame {
         jButton1 = new javax.swing.JButton() {
             @Override
             public void paintComponent(java.awt.Graphics g) {
-                java.awt.Image img = new javax.swing.ImageIcon(getClass().getResource("../imagens/"+paisesSorteados.get(0)+".png")).getImage();
+                java.awt.Image img = new javax.swing.ImageIcon(getClass().getResource("../imagens/"+botao1+".png")).getImage();
                 java.awt.Graphics2D g2 = (java.awt.Graphics2D) g.create();
                 g2.drawImage(img, 0, 0, getWidth(), getHeight(), null);
                 g2.dispose();
@@ -78,7 +133,7 @@ public class EscolhaBandeira extends javax.swing.JFrame {
         jButton3 = new javax.swing.JButton() {
             @Override
             public void paintComponent(java.awt.Graphics g) {
-                java.awt.Image img = new javax.swing.ImageIcon(getClass().getResource("../imagens/"+paisesSorteados.get(1)+".png")).getImage();
+                java.awt.Image img = new javax.swing.ImageIcon(getClass().getResource("../imagens/"+botao2+".png")).getImage();
                 java.awt.Graphics2D g2 = (java.awt.Graphics2D) g.create();
                 g2.drawImage(img, 0, 0, getWidth(), getHeight(), null);
                 g2.dispose();
@@ -87,7 +142,7 @@ public class EscolhaBandeira extends javax.swing.JFrame {
         jButton4 = new javax.swing.JButton() {
             @Override
             public void paintComponent(java.awt.Graphics g) {
-                java.awt.Image img = new javax.swing.ImageIcon(getClass().getResource("../imagens/"+paisesSorteados.get(3)+".png")).getImage();
+                java.awt.Image img = new javax.swing.ImageIcon(getClass().getResource("../imagens/"+botao4+".png")).getImage();
                 java.awt.Graphics2D g2 = (java.awt.Graphics2D) g.create();
                 g2.drawImage(img, 0, 0, getWidth(), getHeight(), null);
                 g2.dispose();
@@ -96,13 +151,14 @@ public class EscolhaBandeira extends javax.swing.JFrame {
         jButton5 = new javax.swing.JButton() {
             @Override
             public void paintComponent(java.awt.Graphics g) {
-                java.awt.Image img = new javax.swing.ImageIcon(getClass().getResource("../imagens/"+paisesSorteados.get(2)+".png")).getImage();
+                java.awt.Image img = new javax.swing.ImageIcon(getClass().getResource("../imagens/"+botao3+".png")).getImage();
                 java.awt.Graphics2D g2 = (java.awt.Graphics2D) g.create();
                 g2.drawImage(img, 0, 0, getWidth(), getHeight(), null);
                 g2.dispose();
             }
         };
         jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         addWindowListener(new java.awt.event.WindowAdapter() {
@@ -111,7 +167,6 @@ public class EscolhaBandeira extends javax.swing.JFrame {
             }
         });
 
-        botao1 = paisesSorteados.get(0);
         jButton1.setText("jButton1");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -126,14 +181,12 @@ public class EscolhaBandeira extends javax.swing.JFrame {
         });
 
         jButton3.setText("jButton3");
-        botao2 = paisesSorteados.get(1);
         jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton3ActionPerformed(evt);
             }
         });
 
-        botao4 = paisesSorteados.get(3);
         jButton4.setText("jButton4");
         jButton4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -142,7 +195,6 @@ public class EscolhaBandeira extends javax.swing.JFrame {
         });
 
         jButton5.setText("jButton5");
-        botao3 = paisesSorteados.get(2);
         jButton5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton5ActionPerformed(evt);
@@ -154,12 +206,16 @@ public class EscolhaBandeira extends javax.swing.JFrame {
         jLabel1.setText("PAIS");
         jLabel1.setToolTipText("");
 
+        jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/vida.png"))); // NOI18N
+        jLabel2.setText("3");
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap(237, Short.MAX_VALUE)
+                .addContainerGap(233, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -170,7 +226,9 @@ public class EscolhaBandeira extends javax.swing.JFrame {
                             .addComponent(jButton4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 264, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 593, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 107, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 34, Short.MAX_VALUE)
+                .addComponent(jLabel2)
+                .addGap(26, 26, 26)
                 .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(59, 59, 59))
         );
@@ -178,14 +236,16 @@ public class EscolhaBandeira extends javax.swing.JFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(57, 57, 57)
-                        .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addContainerGap(104, Short.MAX_VALUE)
                         .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(40, 40, 40)))
+                        .addGap(40, 40, 40))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(57, 57, 57)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel2)
+                            .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jButton4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 196, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -216,16 +276,7 @@ public class EscolhaBandeira extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-        if(pais.equalsIgnoreCase(botao1)) {
-            JOptionPane.showMessageDialog(rootPane, "Parabéns você acertou!", "Sucesso", 1);
-            Jogos j = new Jogos();
-            j.setLocationRelativeTo(null);
-            j.setVisible(true);
-            this.dispose();
-        }
-        else {
-            JOptionPane.showMessageDialog(rootPane, "Você errou!", "Erro", 0);
-        }
+        jogo(botao1);
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
@@ -238,45 +289,44 @@ public class EscolhaBandeira extends javax.swing.JFrame {
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
         // TODO add your handling code here:
-        if(pais.equalsIgnoreCase(botao4)) {
-            JOptionPane.showMessageDialog(rootPane, "Parabéns você acertou!", "Sucesso", 1);
-            Jogos j = new Jogos();
-            j.setLocationRelativeTo(null);
-            j.setVisible(true);
-            this.dispose();
-        }
-        else {
-            JOptionPane.showMessageDialog(rootPane, "Você errou!", "Erro", 0);
-        }
+        jogo(botao4);
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
-        if(pais.equalsIgnoreCase(botao2)) {
-            JOptionPane.showMessageDialog(rootPane, "Parabéns você acertou!", "Sucesso", 1);
-            Jogos j = new Jogos();
-            j.setLocationRelativeTo(null);
-            j.setVisible(true);
-            this.dispose();
-        }
-        else {
-            JOptionPane.showMessageDialog(rootPane, "Você errou!", "Erro", 0);
-        }
+        jogo(botao2);
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
         // TODO add your handling code here:
-        if(pais.equalsIgnoreCase(botao3)) {
+        jogo(botao3);
+    }//GEN-LAST:event_jButton5ActionPerformed
+
+    private void jogo(final String botao) {
+        if (pais.equalsIgnoreCase(botao)) {
+            paisesAuxiliar.remove(pais);
             JOptionPane.showMessageDialog(rootPane, "Parabéns você acertou!", "Sucesso", 1);
+            premiosPaises(pais);
             Jogos j = new Jogos();
             j.setLocationRelativeTo(null);
             j.setVisible(true);
             this.dispose();
+        } else {
+            if (vidas == 1) {
+                paisesAuxiliar = new ArrayList();
+                paisesAuxiliar.addAll(Arrays.asList(vetorPaises));
+                Jogos j = new Jogos();
+                JOptionPane.showMessageDialog(rootPane, "Você perdeu sua win streak, comece novamente!", "Erro", 0);
+                j.setLocationRelativeTo(null);
+                j.setVisible(true);
+                this.dispose();
+            } else {
+                JOptionPane.showMessageDialog(rootPane, "Você errou!", "Erro", 0);
+                vidas--;
+                jLabel2.setText("  " + vidas.toString());
+            }
         }
-        else {
-            JOptionPane.showMessageDialog(rootPane, "Você errou!", "Erro", 0);
-        }
-    }//GEN-LAST:event_jButton5ActionPerformed
+    }
 
     /**
      * @param args the command line arguments
@@ -315,11 +365,106 @@ public class EscolhaBandeira extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-               new EscolhaBandeira().setVisible(true);
+                new EscolhaBandeira().setVisible(true);
             }
         });
     }
-
+    
+    private void premiosPaises(final String paisPremio) {
+        switch (paisPremio.toLowerCase()) {
+            case "brasil":
+                p.premios(paisPremio, jaIncrementouBrasil);
+                jaIncrementouBrasil = true;
+                if(Premios.premioBrasil == 3) {
+                    JOptionPane.showMessageDialog(rootPane, "Você ganhou um prêmio do Brasil, entre na aba de Coleção para vê-lo!", "Sucesso", 1);
+                }
+                break;
+            case "chile":
+                p.premios(paisPremio, jaIncrementouChile);
+                jaIncrementouChile = true;
+                if(Premios.premioChile == 3) {
+                    JOptionPane.showMessageDialog(rootPane, "Você ganhou um prêmio do Chile, entre na aba de Coleção para vê-lo!", "Sucesso", 1);
+                }
+                break;
+            case "argentina":
+                p.premios(paisPremio, jaIncrementouArgentina);
+                jaIncrementouArgentina = true;
+                if(Premios.premioArgentina == 3) {
+                    JOptionPane.showMessageDialog(rootPane, "Você ganhou um prêmio da Argentina, entre na aba de Coleção para vê-lo!", "Sucesso", 1);
+                }
+                break;
+            case "equador":
+                p.premios(paisPremio, jaIncrementouEquador);
+                jaIncrementouEquador = true;
+                if(Premios.premioEquador == 3) {
+                    JOptionPane.showMessageDialog(rootPane, "Você ganhou um prêmio do Equador, entre na aba de Coleção para vê-lo!", "Sucesso", 1);
+                }
+                break;
+            case "colômbia":
+                p.premios(paisPremio, jaIncrementouColombia);
+                jaIncrementouColombia = true;
+                if(Premios.premioColombia == 3) {
+                    JOptionPane.showMessageDialog(rootPane, "Você ganhou um prêmio da Colômbia, entre na aba de Coleção para vê-lo!", "Sucesso", 1);
+                }
+                break;
+            case "uruguai":
+                p.premios(paisPremio, jaIncrementouUruguai);
+                jaIncrementouUruguai = true;
+                if(Premios.premioUruguai == 3) {
+                    JOptionPane.showMessageDialog(rootPane, "Você ganhou um prêmio do Uruguai, entre na aba de Coleção para vê-lo!", "Sucesso", 1);
+                }
+                break;
+            case "paraguai":
+                p.premios(paisPremio, jaIncrementouParaguai);
+                jaIncrementouParaguai = true;
+                if(Premios.premioParaguai == 3) {
+                    JOptionPane.showMessageDialog(rootPane, "Você ganhou um prêmio do Paraguai, entre na aba de Coleção para vê-lo!", "Sucesso", 1);
+                }
+                break;
+            case "venezuela":
+                p.premios(paisPremio, jaIncrementouVenezuela);
+                jaIncrementouVenezuela = true;
+                if(Premios.premioVenezuela == 3) {
+                    JOptionPane.showMessageDialog(rootPane, "Você ganhou um prêmio da Venezuela, entre na aba de Coleção para vê-lo!", "Sucesso", 1);
+                }
+                break;
+            case "guiana":
+                p.premios(paisPremio, jaIncrementouGuiana);
+                jaIncrementouGuiana = true;
+                if(Premios.premioGuiana == 3) {
+                    JOptionPane.showMessageDialog(rootPane, "Você ganhou um prêmio da Guiana, entre na aba de Coleção para vê-lo!", "Sucesso", 1);
+                }
+                break;
+            case "guiana francesa":
+                p.premios(paisPremio, jaIncrementouGuianaFrancesa);
+                jaIncrementouGuianaFrancesa = true;
+                if(Premios.premioGuianaFrancesa == 3) {
+                    JOptionPane.showMessageDialog(rootPane, "Você ganhou um prêmio da Guiana Francesa, entre na aba de Coleção para vê-lo!", "Sucesso", 1);
+                }
+                break;
+            case "suriname":
+                p.premios(paisPremio, jaIncrementouSuriname);
+                jaIncrementouSuriname = true;
+                if(Premios.premioSuriname == 3) {
+                    JOptionPane.showMessageDialog(rootPane, "Você ganhou um prêmio do Suriname, entre na aba de Coleção para vê-lo!", "Sucesso", 1);
+                }
+                break;
+            case "peru":
+                p.premios(paisPremio, jaIncrementouPeru);
+                jaIncrementouPeru = true;
+                if(Premios.premioPeru == 3) {
+                    JOptionPane.showMessageDialog(rootPane, "Você ganhou um prêmio do Peru, entre na aba de Coleção para vê-lo!", "Sucesso", 1);
+                }
+                break;
+            case "bolívia":
+                p.premios(paisPremio, jaIncrementouBolivia);
+                jaIncrementouBolivia = true;
+                if(Premios.premioBolivia == 3) {
+                    JOptionPane.showMessageDialog(rootPane, "Você ganhou um prêmio da Bolívia, entre na aba de Coleção para vê-lo!", "Sucesso", 1);
+                }
+                break;
+        }
+    }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
@@ -327,6 +472,7 @@ public class EscolhaBandeira extends javax.swing.JFrame {
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
 }

@@ -1,6 +1,7 @@
 package geoquestgame;
 
 import classes.BackgroundPanel;
+import classes.Premios;
 import static geoquestgame.QualBandeira.paises;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
@@ -17,6 +18,7 @@ import javax.swing.JOptionPane;
  */
 public class Jogos extends javax.swing.JFrame {
 
+    static boolean jaIniciouPremios = false;
     /**
      * Creates new form Menu
      */
@@ -24,6 +26,11 @@ public class Jogos extends javax.swing.JFrame {
 
     public Jogos() {
         initComponents();
+        if(!jaIniciouPremios) {
+            Premios p = new Premios();
+            p.iniciarPremios();
+            jaIniciouPremios = true;
+        }
     }
 
     /**
@@ -103,6 +110,11 @@ public class Jogos extends javax.swing.JFrame {
         });
 
         jButton3.setText("jButton3");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
 
         jButton4.setText("jButton4");
         jButton4.addActionListener(new java.awt.event.ActionListener() {
@@ -112,6 +124,11 @@ public class Jogos extends javax.swing.JFrame {
         });
 
         jButton5.setText("jButton5");
+        jButton5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton5ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -190,10 +207,36 @@ public class Jogos extends javax.swing.JFrame {
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
         // TODO add your handling code here:
         EscolhaBandeira e = new EscolhaBandeira();
-        e.setLocationRelativeTo(null);
-        e.setVisible(true);
-        this.dispose();
+        if(e.isEmpty()) {
+            JOptionPane.showMessageDialog(rootPane, "Você selecionou todas as bandeiras corretamente, tente outro modo!", "Sucesso", 1);
+        }
+        else {
+            e.setLocationRelativeTo(null);
+            e.setVisible(true);
+            this.dispose();
+        }
     }//GEN-LAST:event_jButton4ActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        // TODO add your handling code here:
+        MapaMundi m = new MapaMundi();
+        if(m.isEmpty()) {
+            JOptionPane.showMessageDialog(rootPane, "Você acertou todos os mapas, tente outro modo!", "Sucesso", 1);
+        }
+        else {
+            m.setLocationRelativeTo(null);
+            m.setVisible(true);
+            this.dispose();
+        }
+    }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+        // TODO add your handling code here:
+        Colecao c = new Colecao();
+        c.setLocationRelativeTo(null);
+        c.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_jButton5ActionPerformed
 
     /**
      * @param args the command line arguments
