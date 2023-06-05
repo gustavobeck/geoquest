@@ -178,6 +178,7 @@ public class QualBandeira extends javax.swing.JFrame {
                     paises = new ArrayList();
                     paises.addAll(Arrays.asList(vetorPaises));
                     vidas = 3;
+                    Jogos.porcentagemJogo1 = 0;
                     Jogos j = new Jogos();
                     JOptionPane.showMessageDialog(rootPane, "Você perdeu sua win streak, comece novamente!", "Erro", 0);
                     j.setLocationRelativeTo(null);

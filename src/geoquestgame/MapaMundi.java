@@ -278,6 +278,7 @@ public class MapaMundi extends javax.swing.JFrame {
             if (vidas == 1) {
                 paisesAuxiliar = new ArrayList();
                 paisesAuxiliar.addAll(Arrays.asList(vetorPaises));
+                Jogos.porcentagemJogo3 = 0;
                 Jogos j = new Jogos();
                 vidas = 3;
                 JOptionPane.showMessageDialog(rootPane, "Você perdeu sua win streak, comece novamente!", "Erro", 0);
