@@ -101,12 +101,12 @@ public class MapaMundi extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel1 = jPanel1 = new BackgroundPanel(new ImageIcon(getClass().getResource("../imagens/qualNomeDaBandeira.png")).getImage());
-        jPanel2 = new BackgroundPanel(new ImageIcon(getClass().getResource("../imagens/"+pais+"Mapa.jpg")).getImage());
+        jPanel1 = jPanel1 = new BackgroundPanel(new ImageIcon(getClass().getResource("/imagens/qualNomeDaBandeira.png")).getImage());
+        jPanel2 = new BackgroundPanel(new ImageIcon(getClass().getResource("/imagens/"+pais+"Mapa.jpg")).getImage());
         jButton1 = new javax.swing.JButton() {
             @Override
             public void paintComponent(java.awt.Graphics g) {
-                java.awt.Image img = new javax.swing.ImageIcon(getClass().getResource("../imagens/Group 5.png")).getImage();
+                java.awt.Image img = new javax.swing.ImageIcon(getClass().getResource("/imagens/Group 5.png")).getImage();
                 java.awt.Graphics2D g2 = (java.awt.Graphics2D) g.create();
                 g2.drawImage(img, 0, 0, getWidth(), getHeight(), null);
                 g2.dispose();
@@ -204,8 +204,7 @@ public class MapaMundi extends javax.swing.JFrame {
                         .addComponent(jLabel2))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(47, 47, 47)
-                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(7, 7, 7)

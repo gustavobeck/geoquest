@@ -40,7 +40,7 @@
         </Property>
       </Properties>
       <AuxValues>
-        <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="jPanel1 = new BackgroundPanel(new ImageIcon(getClass().getResource(&quot;../imagens/colecaoJogo.png&quot;)).getImage())"/>
+        <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="jPanel1 = new BackgroundPanel(new ImageIcon(getClass().getResource(&quot;/imagens/colecaoJogo.png&quot;)).getImage())"/>
       </AuxValues>
 
       <Layout>
@@ -181,7 +181,7 @@
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton1ActionPerformed"/>
           </Events>
           <AuxValues>
-            <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new javax.swing.JButton() {&#xa;    @Override&#xa;    public void paintComponent(java.awt.Graphics g) {&#xa;        java.awt.Image img = new javax.swing.ImageIcon(getClass().getResource(&quot;../imagens/Group 5.png&quot;)).getImage();&#xa;        java.awt.Graphics2D g2 = (java.awt.Graphics2D) g.create();&#xa;        g2.drawImage(img, 0, 0, getWidth(), getHeight(), null);&#xa;        g2.dispose();&#xa;    }&#xa;}"/>
+            <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new javax.swing.JButton() {&#xa;    @Override&#xa;    public void paintComponent(java.awt.Graphics g) {&#xa;        java.awt.Image img = new javax.swing.ImageIcon(getClass().getResource(&quot;/imagens/Group 5.png&quot;)).getImage();&#xa;        java.awt.Graphics2D g2 = (java.awt.Graphics2D) g.create();&#xa;        g2.drawImage(img, 0, 0, getWidth(), getHeight(), null);&#xa;        g2.dispose();&#xa;    }&#xa;}"/>
           </AuxValues>
         </Component>
         <Container class="javax.swing.JPanel" name="jPanel2">
@@ -191,7 +191,7 @@
             </Property>
           </Properties>
           <AuxValues>
-            <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new BackgroundPanel(new ImageIcon(getClass().getResource(&quot;../imagens/&quot;+imagem1+&quot;.png&quot;)).getImage())"/>
+            <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new BackgroundPanel(new ImageIcon(getClass().getResource(&quot;/imagens/&quot;+imagem1+&quot;.png&quot;)).getImage())"/>
             <AuxValue name="JavaCodeGenerator_CreateCodePre" type="java.lang.String" value="String imagem1 = p.premioBrasil == 3 ? &quot;brasilPremio&quot; : &quot;premioBloqueado&quot;;"/>
           </AuxValues>
 
@@ -215,7 +215,7 @@
             </Property>
           </Properties>
           <AuxValues>
-            <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new BackgroundPanel(new ImageIcon(getClass().getResource(&quot;../imagens/&quot;+imagem2+&quot;.png&quot;)).getImage())"/>
+            <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new BackgroundPanel(new ImageIcon(getClass().getResource(&quot;/imagens/&quot;+imagem2+&quot;.png&quot;)).getImage())"/>
             <AuxValue name="JavaCodeGenerator_CreateCodePre" type="java.lang.String" value="String imagem2 = p.premioChile == 3 ? &quot;chilePremio&quot; : &quot;premioBloqueado&quot;;"/>
           </AuxValues>
 
@@ -242,7 +242,7 @@
             </Property>
           </Properties>
           <AuxValues>
-            <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new BackgroundPanel(new ImageIcon(getClass().getResource(&quot;../imagens/&quot;+imagem3+&quot;.png&quot;)).getImage())"/>
+            <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new BackgroundPanel(new ImageIcon(getClass().getResource(&quot;/imagens/&quot;+imagem3+&quot;.png&quot;)).getImage())"/>
             <AuxValue name="JavaCodeGenerator_CreateCodePre" type="java.lang.String" value="String imagem3 = p.premioArgentina == 3 ? &quot;argentinaPremio&quot; : &quot;premioBloqueado&quot;;"/>
           </AuxValues>
 
@@ -269,7 +269,7 @@
             </Property>
           </Properties>
           <AuxValues>
-            <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new BackgroundPanel(new ImageIcon(getClass().getResource(&quot;../imagens/&quot;+imagem4+&quot;.png&quot;)).getImage())"/>
+            <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new BackgroundPanel(new ImageIcon(getClass().getResource(&quot;/imagens/&quot;+imagem4+&quot;.png&quot;)).getImage())"/>
             <AuxValue name="JavaCodeGenerator_CreateCodePre" type="java.lang.String" value="String imagem4 = p.premioEquador == 3 ? &quot;equadorPremio&quot; : &quot;premioBloqueado&quot;;"/>
           </AuxValues>
 
@@ -296,7 +296,7 @@
             </Property>
           </Properties>
           <AuxValues>
-            <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new BackgroundPanel(new ImageIcon(getClass().getResource(&quot;../imagens/&quot;+imagem5+&quot;.png&quot;)).getImage())"/>
+            <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new BackgroundPanel(new ImageIcon(getClass().getResource(&quot;/imagens/&quot;+imagem5+&quot;.png&quot;)).getImage())"/>
             <AuxValue name="JavaCodeGenerator_CreateCodePre" type="java.lang.String" value="String imagem5 = p.premioColombia == 3 ? &quot;colombiaPremio&quot; : &quot;premioBloqueado&quot;;"/>
           </AuxValues>
 
@@ -323,7 +323,7 @@
             </Property>
           </Properties>
           <AuxValues>
-            <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new BackgroundPanel(new ImageIcon(getClass().getResource(&quot;../imagens/&quot;+imagem6+&quot;.png&quot;)).getImage())"/>
+            <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new BackgroundPanel(new ImageIcon(getClass().getResource(&quot;/imagens/&quot;+imagem6+&quot;.png&quot;)).getImage())"/>
             <AuxValue name="JavaCodeGenerator_CreateCodePre" type="java.lang.String" value="String imagem6 = p.premioUruguai == 3 ? &quot;uruguaiPremio&quot; : &quot;premioBloqueado&quot;;"/>
           </AuxValues>
 
@@ -351,7 +351,7 @@
             </Property>
           </Properties>
           <AuxValues>
-            <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new BackgroundPanel(new ImageIcon(getClass().getResource(&quot;../imagens/&quot;+imagem7+&quot;.png&quot;)).getImage())"/>
+            <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new BackgroundPanel(new ImageIcon(getClass().getResource(&quot;/imagens/&quot;+imagem7+&quot;.png&quot;)).getImage())"/>
             <AuxValue name="JavaCodeGenerator_CreateCodePre" type="java.lang.String" value="String imagem7 = p.premioParaguai == 3 ? &quot;paraguaiPremio&quot; : &quot;premioBloqueado&quot;;"/>
           </AuxValues>
 
@@ -378,7 +378,7 @@
             </Property>
           </Properties>
           <AuxValues>
-            <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new BackgroundPanel(new ImageIcon(getClass().getResource(&quot;../imagens/&quot;+imagem8+&quot;.png&quot;)).getImage())"/>
+            <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new BackgroundPanel(new ImageIcon(getClass().getResource(&quot;/imagens/&quot;+imagem8+&quot;.png&quot;)).getImage())"/>
             <AuxValue name="JavaCodeGenerator_CreateCodePre" type="java.lang.String" value="String imagem8 = p.premioVenezuela == 3 ? &quot;venezuelaPremio&quot; : &quot;premioBloqueado&quot;;"/>
           </AuxValues>
 
@@ -405,7 +405,7 @@
             </Property>
           </Properties>
           <AuxValues>
-            <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new BackgroundPanel(new ImageIcon(getClass().getResource(&quot;../imagens/&quot;+imagem9+&quot;.png&quot;)).getImage())"/>
+            <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new BackgroundPanel(new ImageIcon(getClass().getResource(&quot;/imagens/&quot;+imagem9+&quot;.png&quot;)).getImage())"/>
             <AuxValue name="JavaCodeGenerator_CreateCodePre" type="java.lang.String" value="String imagem9 = p.premioGuiana == 3 ? &quot;guianaPremio&quot; : &quot;premioBloqueado&quot;;"/>
           </AuxValues>
 
@@ -432,7 +432,7 @@
             </Property>
           </Properties>
           <AuxValues>
-            <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new BackgroundPanel(new ImageIcon(getClass().getResource(&quot;../imagens/&quot;+imagem10+&quot;.png&quot;)).getImage())"/>
+            <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new BackgroundPanel(new ImageIcon(getClass().getResource(&quot;/imagens/&quot;+imagem10+&quot;.png&quot;)).getImage())"/>
             <AuxValue name="JavaCodeGenerator_CreateCodePre" type="java.lang.String" value="String imagem10 = p.premioGuianaFrancesa == 3 ? &quot;guianaFrancesaPremio&quot; : &quot;premioBloqueado&quot;;"/>
           </AuxValues>
 
@@ -459,7 +459,7 @@
             </Property>
           </Properties>
           <AuxValues>
-            <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new BackgroundPanel(new ImageIcon(getClass().getResource(&quot;../imagens/&quot;+imagem11+&quot;.png&quot;)).getImage())"/>
+            <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new BackgroundPanel(new ImageIcon(getClass().getResource(&quot;/imagens/&quot;+imagem11+&quot;.png&quot;)).getImage())"/>
             <AuxValue name="JavaCodeGenerator_CreateCodePre" type="java.lang.String" value="String imagem11 = p.premioSuriname == 3 ? &quot;surinamePremio&quot; : &quot;premioBloqueado&quot;;"/>
           </AuxValues>
 
@@ -486,7 +486,7 @@
             </Property>
           </Properties>
           <AuxValues>
-            <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new BackgroundPanel(new ImageIcon(getClass().getResource(&quot;../imagens/&quot;+imagem12+&quot;.png&quot;)).getImage())"/>
+            <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new BackgroundPanel(new ImageIcon(getClass().getResource(&quot;/imagens/&quot;+imagem12+&quot;.png&quot;)).getImage())"/>
             <AuxValue name="JavaCodeGenerator_CreateCodePre" type="java.lang.String" value="String imagem12 = p.premioPeru == 3 ? &quot;peruPremio&quot; : &quot;premioBloqueado&quot;;"/>
           </AuxValues>
 
@@ -513,7 +513,7 @@
             </Property>
           </Properties>
           <AuxValues>
-            <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new BackgroundPanel(new ImageIcon(getClass().getResource(&quot;../imagens/&quot;+imagem13+&quot;.png&quot;)).getImage())"/>
+            <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new BackgroundPanel(new ImageIcon(getClass().getResource(&quot;/imagens/&quot;+imagem13+&quot;.png&quot;)).getImage())"/>
             <AuxValue name="JavaCodeGenerator_CreateCodePre" type="java.lang.String" value="String imagem13 = p.premioBolivia == 3 ? &quot;boliviaPremio&quot; : &quot;premioBloqueado&quot;;"/>
           </AuxValues>
 

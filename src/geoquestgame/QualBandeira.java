@@ -64,13 +64,13 @@ public class QualBandeira extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel1 = jPanel1 = new BackgroundPanel(new ImageIcon(getClass().getResource("../imagens/qualNomeDaBandeira.png")).getImage());
+        jPanel1 = jPanel1 = new BackgroundPanel(new ImageIcon(getClass().getResource("/imagens/qualNomeDaBandeira.png")).getImage());
         jTextField1 = new javax.swing.JTextField();
-        jPanel2 = new BackgroundPanel(new ImageIcon(getClass().getResource("../imagens/"+pais+".png")).getImage());
+        jPanel2 = new BackgroundPanel(new ImageIcon(getClass().getResource("/imagens/"+pais+".png")).getImage());
         jButton1 = new javax.swing.JButton() {
             @Override
             public void paintComponent(java.awt.Graphics g) {
-                java.awt.Image img = new javax.swing.ImageIcon(getClass().getResource("../imagens/Group 5.png")).getImage();
+                java.awt.Image img = new javax.swing.ImageIcon(getClass().getResource("/imagens/Group 5.png")).getImage();
                 java.awt.Graphics2D g2 = (java.awt.Graphics2D) g.create();
                 g2.drawImage(img, 0, 0, getWidth(), getHeight(), null);
                 g2.dispose();
@@ -97,8 +97,6 @@ public class QualBandeira extends javax.swing.JFrame {
             .addGap(0, 382, Short.MAX_VALUE)
         );
 
-        jButton1.setMaximumSize(new java.awt.Dimension(30, 6));
-        jButton1.setMinimumSize(new java.awt.Dimension(30, 6));
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);

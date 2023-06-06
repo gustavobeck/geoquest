@@ -38,7 +38,7 @@
   <SubComponents>
     <Container class="javax.swing.JPanel" name="jPanel1">
       <AuxValues>
-        <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="jPanel1 = new BackgroundPanel(new ImageIcon(getClass().getResource(&quot;../imagens/escolhaBandeiraJogo.png&quot;)).getImage())"/>
+        <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="jPanel1 = new BackgroundPanel(new ImageIcon(getClass().getResource(&quot;/imagens/escolhaBandeiraJogo.png&quot;)).getImage())"/>
       </AuxValues>
 
       <Layout>
@@ -109,7 +109,7 @@
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton1ActionPerformed"/>
           </Events>
           <AuxValues>
-            <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new javax.swing.JButton() {&#xa;    @Override&#xa;    public void paintComponent(java.awt.Graphics g) {&#xa;        java.awt.Image img = new javax.swing.ImageIcon(getClass().getResource(&quot;../imagens/&quot;+botao1+&quot;.png&quot;)).getImage();&#xa;        java.awt.Graphics2D g2 = (java.awt.Graphics2D) g.create();&#xa;        g2.drawImage(img, 0, 0, getWidth(), getHeight(), null);&#xa;        g2.dispose();&#xa;    }&#xa;}"/>
+            <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new javax.swing.JButton() {&#xa;    @Override&#xa;    public void paintComponent(java.awt.Graphics g) {&#xa;        java.awt.Image img = new javax.swing.ImageIcon(getClass().getResource(&quot;/imagens/&quot;+botao1+&quot;.png&quot;)).getImage();&#xa;        java.awt.Graphics2D g2 = (java.awt.Graphics2D) g.create();&#xa;        g2.drawImage(img, 0, 0, getWidth(), getHeight(), null);&#xa;        g2.dispose();&#xa;    }&#xa;}"/>
           </AuxValues>
         </Component>
         <Component class="javax.swing.JButton" name="jButton2">
@@ -117,7 +117,7 @@
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton2ActionPerformed"/>
           </Events>
           <AuxValues>
-            <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new javax.swing.JButton() {&#xa;    @Override&#xa;    public void paintComponent(java.awt.Graphics g) {&#xa;        java.awt.Image img = new javax.swing.ImageIcon(getClass().getResource(&quot;../imagens/Group 5.png&quot;)).getImage();&#xa;        java.awt.Graphics2D g2 = (java.awt.Graphics2D) g.create();&#xa;        g2.drawImage(img, 0, 0, getWidth(), getHeight(), null);&#xa;        g2.dispose();&#xa;    }&#xa;}"/>
+            <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new javax.swing.JButton() {&#xa;    @Override&#xa;    public void paintComponent(java.awt.Graphics g) {&#xa;        java.awt.Image img = new javax.swing.ImageIcon(getClass().getResource(&quot;/imagens/Group 5.png&quot;)).getImage();&#xa;        java.awt.Graphics2D g2 = (java.awt.Graphics2D) g.create();&#xa;        g2.drawImage(img, 0, 0, getWidth(), getHeight(), null);&#xa;        g2.dispose();&#xa;    }&#xa;}"/>
           </AuxValues>
         </Component>
         <Component class="javax.swing.JButton" name="jButton3">
@@ -128,7 +128,7 @@
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton3ActionPerformed"/>
           </Events>
           <AuxValues>
-            <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new javax.swing.JButton() {&#xa;    @Override&#xa;    public void paintComponent(java.awt.Graphics g) {&#xa;        java.awt.Image img = new javax.swing.ImageIcon(getClass().getResource(&quot;../imagens/&quot;+botao2+&quot;.png&quot;)).getImage();&#xa;        java.awt.Graphics2D g2 = (java.awt.Graphics2D) g.create();&#xa;        g2.drawImage(img, 0, 0, getWidth(), getHeight(), null);&#xa;        g2.dispose();&#xa;    }&#xa;}"/>
+            <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new javax.swing.JButton() {&#xa;    @Override&#xa;    public void paintComponent(java.awt.Graphics g) {&#xa;        java.awt.Image img = new javax.swing.ImageIcon(getClass().getResource(&quot;/imagens/&quot;+botao2+&quot;.png&quot;)).getImage();&#xa;        java.awt.Graphics2D g2 = (java.awt.Graphics2D) g.create();&#xa;        g2.drawImage(img, 0, 0, getWidth(), getHeight(), null);&#xa;        g2.dispose();&#xa;    }&#xa;}"/>
           </AuxValues>
         </Component>
         <Component class="javax.swing.JButton" name="jButton4">
@@ -139,7 +139,7 @@
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton4ActionPerformed"/>
           </Events>
           <AuxValues>
-            <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new javax.swing.JButton() {&#xa;    @Override&#xa;    public void paintComponent(java.awt.Graphics g) {&#xa;        java.awt.Image img = new javax.swing.ImageIcon(getClass().getResource(&quot;../imagens/&quot;+botao4+&quot;.png&quot;)).getImage();&#xa;        java.awt.Graphics2D g2 = (java.awt.Graphics2D) g.create();&#xa;        g2.drawImage(img, 0, 0, getWidth(), getHeight(), null);&#xa;        g2.dispose();&#xa;    }&#xa;}"/>
+            <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new javax.swing.JButton() {&#xa;    @Override&#xa;    public void paintComponent(java.awt.Graphics g) {&#xa;        java.awt.Image img = new javax.swing.ImageIcon(getClass().getResource(&quot;/imagens/&quot;+botao4+&quot;.png&quot;)).getImage();&#xa;        java.awt.Graphics2D g2 = (java.awt.Graphics2D) g.create();&#xa;        g2.drawImage(img, 0, 0, getWidth(), getHeight(), null);&#xa;        g2.dispose();&#xa;    }&#xa;}"/>
           </AuxValues>
         </Component>
         <Component class="javax.swing.JButton" name="jButton5">
@@ -150,7 +150,7 @@
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton5ActionPerformed"/>
           </Events>
           <AuxValues>
-            <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new javax.swing.JButton() {&#xa;    @Override&#xa;    public void paintComponent(java.awt.Graphics g) {&#xa;        java.awt.Image img = new javax.swing.ImageIcon(getClass().getResource(&quot;../imagens/&quot;+botao3+&quot;.png&quot;)).getImage();&#xa;        java.awt.Graphics2D g2 = (java.awt.Graphics2D) g.create();&#xa;        g2.drawImage(img, 0, 0, getWidth(), getHeight(), null);&#xa;        g2.dispose();&#xa;    }&#xa;}"/>
+            <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new javax.swing.JButton() {&#xa;    @Override&#xa;    public void paintComponent(java.awt.Graphics g) {&#xa;        java.awt.Image img = new javax.swing.ImageIcon(getClass().getResource(&quot;/imagens/&quot;+botao3+&quot;.png&quot;)).getImage();&#xa;        java.awt.Graphics2D g2 = (java.awt.Graphics2D) g.create();&#xa;        g2.drawImage(img, 0, 0, getWidth(), getHeight(), null);&#xa;        g2.dispose();&#xa;    }&#xa;}"/>
           </AuxValues>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel1">

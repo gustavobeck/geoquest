@@ -33,12 +33,12 @@ public class Menu extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel1 = jPanel1 = new BackgroundPanel(new ImageIcon(getClass().getResource("../imagens/Group 7.png")).getImage());
+        jPanel1 = jPanel1 = new BackgroundPanel(new ImageIcon(getClass().getResource("/imagens/Group 7.png")).getImage());
         ;
         jButton1 = new javax.swing.JButton() {
             @Override
             public void paintComponent(java.awt.Graphics g) {
-                java.awt.Image img = new javax.swing.ImageIcon(getClass().getResource("../imagens/botaoJogar.png")).getImage();
+                java.awt.Image img = new javax.swing.ImageIcon(getClass().getResource("/imagens/botaoJogar.png")).getImage();
                 java.awt.Graphics2D g2 = (java.awt.Graphics2D) g.create();
                 g2.drawImage(img, 0, 0, getWidth(), getHeight(), null);
                 g2.dispose();
@@ -47,7 +47,7 @@ public class Menu extends javax.swing.JFrame {
         jButton2 = new javax.swing.JButton() {
             @Override
             public void paintComponent(java.awt.Graphics g) {
-                java.awt.Image img = new javax.swing.ImageIcon(getClass().getResource("../imagens/botaoSair.png")).getImage();
+                java.awt.Image img = new javax.swing.ImageIcon(getClass().getResource("/imagens/botaoSair.png")).getImage();
                 java.awt.Graphics2D g2 = (java.awt.Graphics2D) g.create();
                 g2.drawImage(img, 0, 0, getWidth(), getHeight(), null);
                 g2.dispose();

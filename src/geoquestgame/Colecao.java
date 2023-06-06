@@ -31,42 +31,42 @@ public class Colecao extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel1 = jPanel1 = new BackgroundPanel(new ImageIcon(getClass().getResource("../imagens/colecaoJogo.png")).getImage());
+        jPanel1 = jPanel1 = new BackgroundPanel(new ImageIcon(getClass().getResource("/imagens/colecaoJogo.png")).getImage());
         jButton1 = new javax.swing.JButton() {
             @Override
             public void paintComponent(java.awt.Graphics g) {
-                java.awt.Image img = new javax.swing.ImageIcon(getClass().getResource("../imagens/Group 5.png")).getImage();
+                java.awt.Image img = new javax.swing.ImageIcon(getClass().getResource("/imagens/Group 5.png")).getImage();
                 java.awt.Graphics2D g2 = (java.awt.Graphics2D) g.create();
                 g2.drawImage(img, 0, 0, getWidth(), getHeight(), null);
                 g2.dispose();
             }
         };
         String imagem1 = p.premioBrasil == 3 ? "brasilPremio" : "premioBloqueado";
-        jPanel2 = new BackgroundPanel(new ImageIcon(getClass().getResource("../imagens/"+imagem1+".png")).getImage());
+        jPanel2 = new BackgroundPanel(new ImageIcon(getClass().getResource("/imagens/"+imagem1+".png")).getImage());
         String imagem2 = p.premioChile == 3 ? "chilePremio" : "premioBloqueado";
-        jPanel3 = new BackgroundPanel(new ImageIcon(getClass().getResource("../imagens/"+imagem2+".png")).getImage());
+        jPanel3 = new BackgroundPanel(new ImageIcon(getClass().getResource("/imagens/"+imagem2+".png")).getImage());
         String imagem3 = p.premioArgentina == 3 ? "argentinaPremio" : "premioBloqueado";
-        jPanel4 = new BackgroundPanel(new ImageIcon(getClass().getResource("../imagens/"+imagem3+".png")).getImage());
+        jPanel4 = new BackgroundPanel(new ImageIcon(getClass().getResource("/imagens/"+imagem3+".png")).getImage());
         String imagem4 = p.premioEquador == 3 ? "equadorPremio" : "premioBloqueado";
-        jPanel5 = new BackgroundPanel(new ImageIcon(getClass().getResource("../imagens/"+imagem4+".png")).getImage());
+        jPanel5 = new BackgroundPanel(new ImageIcon(getClass().getResource("/imagens/"+imagem4+".png")).getImage());
         String imagem5 = p.premioColombia == 3 ? "colombiaPremio" : "premioBloqueado";
-        jPanel6 = new BackgroundPanel(new ImageIcon(getClass().getResource("../imagens/"+imagem5+".png")).getImage());
+        jPanel6 = new BackgroundPanel(new ImageIcon(getClass().getResource("/imagens/"+imagem5+".png")).getImage());
         String imagem6 = p.premioUruguai == 3 ? "uruguaiPremio" : "premioBloqueado";
-        jPanel7 = new BackgroundPanel(new ImageIcon(getClass().getResource("../imagens/"+imagem6+".png")).getImage());
+        jPanel7 = new BackgroundPanel(new ImageIcon(getClass().getResource("/imagens/"+imagem6+".png")).getImage());
         String imagem7 = p.premioParaguai == 3 ? "paraguaiPremio" : "premioBloqueado";
-        jPanel8 = new BackgroundPanel(new ImageIcon(getClass().getResource("../imagens/"+imagem7+".png")).getImage());
+        jPanel8 = new BackgroundPanel(new ImageIcon(getClass().getResource("/imagens/"+imagem7+".png")).getImage());
         String imagem8 = p.premioVenezuela == 3 ? "venezuelaPremio" : "premioBloqueado";
-        jPanel9 = new BackgroundPanel(new ImageIcon(getClass().getResource("../imagens/"+imagem8+".png")).getImage());
+        jPanel9 = new BackgroundPanel(new ImageIcon(getClass().getResource("/imagens/"+imagem8+".png")).getImage());
         String imagem9 = p.premioGuiana == 3 ? "guianaPremio" : "premioBloqueado";
-        jPanel10 = new BackgroundPanel(new ImageIcon(getClass().getResource("../imagens/"+imagem9+".png")).getImage());
+        jPanel10 = new BackgroundPanel(new ImageIcon(getClass().getResource("/imagens/"+imagem9+".png")).getImage());
         String imagem10 = p.premioGuianaFrancesa == 3 ? "guianaFrancesaPremio" : "premioBloqueado";
-        jPanel11 = new BackgroundPanel(new ImageIcon(getClass().getResource("../imagens/"+imagem10+".png")).getImage());
+        jPanel11 = new BackgroundPanel(new ImageIcon(getClass().getResource("/imagens/"+imagem10+".png")).getImage());
         String imagem11 = p.premioSuriname == 3 ? "surinamePremio" : "premioBloqueado";
-        jPanel12 = new BackgroundPanel(new ImageIcon(getClass().getResource("../imagens/"+imagem11+".png")).getImage());
+        jPanel12 = new BackgroundPanel(new ImageIcon(getClass().getResource("/imagens/"+imagem11+".png")).getImage());
         String imagem12 = p.premioPeru == 3 ? "peruPremio" : "premioBloqueado";
-        jPanel13 = new BackgroundPanel(new ImageIcon(getClass().getResource("../imagens/"+imagem12+".png")).getImage());
+        jPanel13 = new BackgroundPanel(new ImageIcon(getClass().getResource("/imagens/"+imagem12+".png")).getImage());
         String imagem13 = p.premioBolivia == 3 ? "boliviaPremio" : "premioBloqueado";
-        jPanel14 = new BackgroundPanel(new ImageIcon(getClass().getResource("../imagens/"+imagem13+".png")).getImage());
+        jPanel14 = new BackgroundPanel(new ImageIcon(getClass().getResource("/imagens/"+imagem13+".png")).getImage());
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
